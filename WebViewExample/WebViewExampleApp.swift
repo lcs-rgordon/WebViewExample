@@ -21,7 +21,13 @@ struct WebViewExampleApp: App {
                         Text("Full Page")
                         Image(systemName: "text.justify")
                     }
-                
+
+                PartialPageView()
+                    .tabItem {
+                        Text("Partial Page")
+                        Image(systemName: "captions.bubble.fill")
+                    }
+
             }
         }
     }

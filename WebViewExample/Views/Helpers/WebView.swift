@@ -37,7 +37,8 @@ struct WebView: View {
                                 .frame(width: 22, height: 22, alignment: .center)
                                 .foregroundColor(.black)
                                 .padding(.horizontal, 10)
-                            
+                                .padding(.top, 10)
+
                             Spacer()
 
                         }
@@ -53,6 +54,7 @@ struct WebView: View {
                     .font(.caption2)
                     .bold()
                     .padding(.horizontal, 42)
+                    .padding(.top, 10)
                     .multilineTextAlignment(.center)
                 
 
