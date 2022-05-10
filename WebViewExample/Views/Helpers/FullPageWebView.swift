@@ -12,6 +12,9 @@ struct FullPageWebView: View {
     // MARK: Stored properties
     @ObservedObject var webViewModel: WebViewModel
     
+    // Should navigation be restricted to a given page or site?
+    @State var restrictToAddressBeginningWith: String
+    
     // MARK: Computed properties
     var body: some View {
         
@@ -19,7 +22,7 @@ struct FullPageWebView: View {
             
             ZStack {
                 
-                WebViewContainer(webViewModel: webViewModel)
+                WebViewContainer(webViewModel: webViewModel, restrictToAddressBeginningWith: restrictToAddressBeginningWith)
                 
                 // When the web page is loading, overlay a waiting indicator.
                 if webViewModel.isLoading {
@@ -57,8 +60,9 @@ struct FullPageWebView: View {
     }
     
     // MARK: Initializer
-    init(address: String) {
+    init(address: String, restrictToAddressBeginningWith: String = "") {
         webViewModel = WebViewModel(url: address)
+        self.restrictToAddressBeginningWith = restrictToAddressBeginningWith
     }
 }
 

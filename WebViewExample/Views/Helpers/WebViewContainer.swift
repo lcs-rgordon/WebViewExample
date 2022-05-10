@@ -11,9 +11,10 @@ import SwiftUI
 
 struct WebViewContainer: UIViewRepresentable {
     @ObservedObject var webViewModel: WebViewModel
+    let restrictToAddressBeginningWith: String
     
     func makeCoordinator() -> WebViewContainer.Coordinator {
-        Coordinator(self, webViewModel)
+        Coordinator(self, webViewModel, restrictToAddressBeginningWith)
     }
     
     func makeUIView(context: Context) -> WKWebView {
@@ -41,10 +42,12 @@ extension WebViewContainer {
     class Coordinator: NSObject, WKNavigationDelegate {
         @ObservedObject private var webViewModel: WebViewModel
         private let parent: WebViewContainer
+        private let restrictToAddressBeginningWith: String
         
-        init(_ parent: WebViewContainer, _ webViewModel: WebViewModel) {
+        init(_ parent: WebViewContainer, _ webViewModel: WebViewModel, _ restrictToAddressBeginningWith: String) {
             self.parent = parent
             self.webViewModel = webViewModel
+            self.restrictToAddressBeginningWith = restrictToAddressBeginningWith
         }
         
         func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
@@ -59,6 +62,19 @@ extension WebViewContainer {
         
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
             webViewModel.isLoading = false
+        }
+        
+        func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+            if let host = navigationAction.request.url?.host {
+                print("about to check restriction")
+                print(dump(host))
+                if host.starts(with: restrictToAddressBeginningWith) {
+                    decisionHandler(.allow)
+                    return
+                }
+            }
+
+            decisionHandler(.cancel)
         }
     }
 }

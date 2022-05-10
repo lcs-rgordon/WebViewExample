@@ -16,7 +16,8 @@ struct WebViewExampleApp: App {
         WindowGroup {
             TabView {
                 
-                FullPageWebView(address: "https://www.russellgordon.ca/")
+                FullPageWebView(address: "https://www.russellgordon.ca/",
+                                restrictToAddressBeginningWith: "www.russellgordon.ca")
                     .tabItem {
                         Text("Full Page")
                         Image(systemName: "text.justify")
