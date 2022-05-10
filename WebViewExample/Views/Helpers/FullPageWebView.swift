@@ -18,7 +18,45 @@ struct FullPageWebView: View {
     // MARK: Computed properties
     var body: some View {
         
-        NavigationView {
+        VStack(alignment: .center) {
+            
+            ZStack {
+
+                // If navigation has occured, and there is a page to go back to, allow this via a button
+                Button(action: {
+                    
+                    webViewModel.shouldGoBack.toggle()
+                    
+                }, label: {
+                    
+                    if webViewModel.canGoBack {
+
+                        HStack {
+
+                            Image(systemName: "arrow.backward.circle")
+                                .frame(width: 22, height: 22, alignment: .center)
+                                .foregroundColor(.black)
+                                .padding(.horizontal, 10)
+                            
+                            Spacer()
+
+                        }
+                                                
+                    } else {
+                        EmptyView()
+                            .frame(width: 0, height: 0, alignment: .center)
+                    }
+                    
+                })
+                
+                Text(webViewModel.title)
+                    .font(.caption2)
+                    .bold()
+                    .padding(.horizontal, 42)
+                    .multilineTextAlignment(.center)
+                
+
+            }
             
             ZStack {
                 
@@ -30,31 +68,7 @@ struct FullPageWebView: View {
                 }
                 
             }
-            .navigationTitle(webViewModel.title)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    
-                    // If navigation has occured, and there is a page to go back to, allow this via a button
-                    Button(action: {
-                        
-                        webViewModel.shouldGoBack.toggle()
-                        
-                    }, label: {
-                        
-                        if webViewModel.canGoBack {
-                            Image(systemName: "arrow.left")
-                                .frame(width: 44, height: 44, alignment: .center)
-                                .foregroundColor(.black)
-                        } else {
-                            EmptyView()
-                                .frame(width: 0, height: 0, alignment: .center)
-                        }
-                        
-                    })
-                    
-                }
-            }
+
         }
         
     }
