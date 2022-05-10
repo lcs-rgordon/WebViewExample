@@ -1,5 +1,5 @@
 //
-//  PartialPageView.swift
+//  PartialPageExampleView.swift
 //  WebViewExample
 //
 //  Created by Russell Gordon on 2022-05-10.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PartialPageView: View {
+struct PartialPageExampleView: View {
     var body: some View {
         NavigationView {
             ScrollView {
@@ -30,8 +30,8 @@ struct PartialPageView: View {
     }
 }
 
-struct PartialPageView_Previews: PreviewProvider {
+struct PartialPageExampleView_Previews: PreviewProvider {
     static var previews: some View {
-        PartialPageView()
+        PartialPageExampleView()
     }
 }

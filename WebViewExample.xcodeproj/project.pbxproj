@@ -14,7 +14,7 @@
 		817C2764282A6C88000E7C30 /* WebViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C2763282A6C88000E7C30 /* WebViewContainer.swift */; };
 		817C2766282A6E9D000E7C30 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C2765282A6E9D000E7C30 /* WebView.swift */; };
 		817C2770282A7B80000E7C30 /* FullPageExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C276F282A7B80000E7C30 /* FullPageExampleView.swift */; };
-		817C2772282A7CDA000E7C30 /* PartialPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C2771282A7CDA000E7C30 /* PartialPageView.swift */; };
+		817C2772282A7CDA000E7C30 /* PartialPageExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C2771282A7CDA000E7C30 /* PartialPageExampleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +26,7 @@
 		817C2763282A6C88000E7C30 /* WebViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewContainer.swift; sourceTree = "<group>"; };
 		817C2765282A6E9D000E7C30 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		817C276F282A7B80000E7C30 /* FullPageExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPageExampleView.swift; sourceTree = "<group>"; };
-		817C2771282A7CDA000E7C30 /* PartialPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialPageView.swift; sourceTree = "<group>"; };
+		817C2771282A7CDA000E7C30 /* PartialPageExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialPageExampleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 			children = (
 				817C2762282A6C7A000E7C30 /* Helpers */,
 				817C276F282A7B80000E7C30 /* FullPageExampleView.swift */,
-				817C2771282A7CDA000E7C30 /* PartialPageView.swift */,
+				817C2771282A7CDA000E7C30 /* PartialPageExampleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 				817C2760282A6C0B000E7C30 /* WebViewModel.swift in Sources */,
 				817C2751282A6BF3000E7C30 /* WebViewExampleApp.swift in Sources */,
 				817C2770282A7B80000E7C30 /* FullPageExampleView.swift in Sources */,
-				817C2772282A7CDA000E7C30 /* PartialPageView.swift in Sources */,
+				817C2772282A7CDA000E7C30 /* PartialPageExampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
