@@ -1,5 +1,5 @@
 //
-//  FullPageWebView.swift
+//  WebView.swift
 //  WebViewExample
 //
 //  Created by Russell Gordon on 2022-05-10.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FullPageWebView: View {
+struct WebView: View {
     
     // MARK: Stored properties
     @ObservedObject var webViewModel: WebViewModel
@@ -80,8 +80,8 @@ struct FullPageWebView: View {
     }
 }
 
-struct FullPageWebView_Previews: PreviewProvider {
+struct WebView_Previews: PreviewProvider {
     static var previews: some View {
-        FullPageWebView(address: "https://www.russellgordon.ca")
+        WebView(address: "https://www.russellgordon.ca")
     }
 }

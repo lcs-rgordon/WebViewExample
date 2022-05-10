@@ -66,14 +66,16 @@ extension WebViewContainer {
         
         func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
             if let host = navigationAction.request.url?.host {
-                print("about to check restriction")
-                print(dump(host))
+                print("--\nabout to check restriction, navigation is restricted to sites starting with: \(restrictToAddressBeginningWith)")
+                print("navigating to: \(host.description)")
                 if host.starts(with: restrictToAddressBeginningWith) {
                     decisionHandler(.allow)
+                    print("navigation allowed")
                     return
                 }
             }
-
+            
+            print("navigation cancelled")
             decisionHandler(.cancel)
         }
     }
