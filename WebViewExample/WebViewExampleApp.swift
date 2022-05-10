@@ -16,16 +16,16 @@ struct WebViewExampleApp: App {
         WindowGroup {
             TabView {
                 
+                PartialPageExampleView()
+                    .tabItem {
+                        Text("Partial Page")
+                        Image(systemName: "captions.bubble.fill")
+                    }
+                
                 FullPageExampleView()
                     .tabItem {
                         Text("Full Page")
                         Image(systemName: "text.justify")
-                    }
-
-                PartialPageView()
-                    .tabItem {
-                        Text("Partial Page")
-                        Image(systemName: "captions.bubble.fill")
                     }
 
             }
